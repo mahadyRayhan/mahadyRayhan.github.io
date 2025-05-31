@@ -1,30 +1,342 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Mahady Hasan Rayhan</title>
-		<!-- link to main stylesheet -->
-		<link rel="stylesheet" type="text/css" href="/css/main.css">
-	</head>
-	<body>
-		<nav>
-    		<ul>
-        		<li><a href="/">Home</a></li>
-	        	<li><a href="/about">About</a></li>
-        		<li><a href="/cv">CV</a></li>
-        		<li><a href="/blog">Blog</a></li>
-    		</ul>
-		</nav>
-		<div class="container">
-    		<div class="blurb">
-        		<h1>Hi there, I'm Mahady Hasan Rayhan!</h1>
-				<p>I'm best known as the horrible cop from <em>A Touch of Evil</em> Don't trust me. <a href="/about">Read more about my life...</a></p>
-    		</div><!-- /.blurb -->
-		</div><!-- /.container -->
-		<footer>
-    		<ul>
-        		<li><a href="mailto:hankquinlanhub@gmail.com">email</a></li>
-        		<li><a href="https://github.com/hankquinlan">github.com/hankquinlan</a></li>
-			</ul>
-		</footer>
-	</body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahady Hasan Rayhan - Computer Science PhD</title>
+    <meta name="description" content="Portfolio website for Mahady Hasan Rayhan, a PhD candidate in Computer Science specializing in Machine Learning, Deep Learning, and Computer Vision.">
+    <meta name="keywords" content="Mahady Hasan Rayhan, Computer Science, PhD, Machine Learning, Deep Learning, Computer Vision, LLMs, RAG, Python, Java, C++, TensorFlow, PyTorch, OpenCV, Scikit-learn">
+
+    <!-- Include Tailwind CSS CDN -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+    <!-- Google Font - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom styles can be added here if needed, but primarily relying on Tailwind classes */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Add smooth scroll behavior to the body */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 leading-normal tracking-normal">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-md fixed top-0 w-full z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-blue-600 hover:text-blue-800">Mahady Hasan Rayhan</a>
+            <div class="flex space-x-4">
+                <a href="#about" class="text-gray-600 hover:text-blue-600">About</a>
+                <a href="#skills" class="text-gray-600 hover:text-blue-600">Skills</a>
+                <a href="#projects" class="text-gray-600 hover:text-blue-600">Projects</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20 md:py-32 text-center">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Mahady Hasan Rayhan</h1>
+            <p class="text-xl md:text-2xl mb-6">Doctor of Philosophy in Computer Science</p>
+            <p class="max-w-3xl mx-auto mb-8">
+                Highly motivated and research-oriented Computer Science candidate pursuing a PhD at the University of Missouri, Columbia. Specializing in Machine Learning, Deep Learning, and Computer Vision, with a strong focus on Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG) systems. Experienced in developing advanced AI solutions for diverse applications, including robotics, industrial automation, and scientific research tools.
+            </p>
+            <div class="flex justify-center space-x-6">
+                <a href="https://www.linkedin.com/in/mahadyhasanrayhan/" target="_blank" class="text-white hover:text-blue-200">
+                    <img src="https://unpkg.com/lucide-static@latest/icons/linkedin.svg" alt="LinkedIn" class="h-8 h-8 inline-block">
+                </a>
+                <a href="https://github.com/mahadyRayhan" target="_blank" class="text-white hover:text-blue-200">
+                    <img src="https://unpkg.com/lucide-static@latest/icons/github.svg" alt="GitHub" class="h-8 h-8 inline-block">
+                </a>
+                <a href="https://scholar.google.com/citations?user=uBkjbx8AAAAJ&hl=en" target="_blank" class="text-white hover:text-blue-200">
+                    <img src="https://unpkg.com/lucide-static@latest/icons/graduation-cap.svg" alt="Google Scholar" class="h-8 h-8 inline-block">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 md:py-22">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-blue-600">About Me</h2>
+            <p class="max-w-4xl mx-auto text-lg leading-relaxed">
+                As a PhD candidate in Computer Science at the University of Missouri, I am deeply involved in exploring cutting-edge areas of Artificial Intelligence. My research focuses on leveraging Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG) systems for complex tasks, particularly in areas like pedagogical agents and scientific research. Prior to my PhD, I gained experience at the University of Texas at Tyler and industrial roles at ROMS Co., Ltd., Yamaha Robotics Holdings Co., Ltd., and Hiperdyne Corporation, where I applied my skills in Machine Learning, Deep Learning, and Computer Vision to practical applications. I am passionate about using AI to solve challenging problems and contribute to the field.
+            </p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="bg-gray-100 py-20 md:py-22">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-blue-600">My Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600">Programming Languages</h3>
+                    <p>Python, Java, C++</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600">Data Science</h3>
+                    <p>Python (NumPy, pandas, Dask, Matplotlib, Seaborn)</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600">Database & Knowledge Graphs</h3>
+                    <p>SQLite, MySQL, Neo4j, Cypher</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600">Machine Learning & Computer Vision</h3>
+                    <p>Scikit-learn (Sklearn), OpenCV, Open3D</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600">Deep Learning</h3>
+                    <p>Keras, TensorFlow, PyTorch, LLMs, OpenVINO</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600">Version Control & Monitoring</h3>
+                    <p>Git, DVC, Docker, Weights & Biases</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600">Other Tools</h3>
+                    <p>Linux, AWS S3, ZED SDK, Colmap</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 md:py-22">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-blue-600">My Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+                <!-- Project 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col justify-between">
+                    <h3 class="text-2xl font-bold mb-3 text-blue-600">Pedagogical Agent for Neurodiverse Learning</h3>
+                    <p class="mb-4 flex-grow text-left">
+                        Engineered a system-aware pedagogical agent, leveraging a multimodal RAG system with LLMs to interpret user context and provide personalized guidance based on document-based knowledge. Exploring real-time user analysis to enhance personalization.
+                    </p>
+                    <p class="text-sm text-gray-600 mb-4 text-left"><strong>Technologies:</strong> Vector Databases, Multimodal LLMs, Prompt Engineering</p>
+                    <div class="flex space-x-2 mt-auto">
+                        <!-- Add links here if available -->
+                        <!-- <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">Live Demo</a> -->
+                        <!-- <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">Code Repo</a> -->
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col justify-between">
+                    <h3 class="text-2xl font-bold mb-3 text-blue-600">Agentic RAG for CNT Research</h3>
+                    <p class="mb-4 flex-grow text-left">
+                        Engineered an advanced RAG framework to perform query reformulation, information retrieval, and result summarization through an iterative retry process. Enabled real-time experimental simulations through a chatbot interface.
+                    </p>
+                    <p class="text-sm text-gray-600 mb-4 text-left"><strong>Technologies:</strong> LLMs, Vector Indexing, Simulation Frameworks</p>
+                    <div class="flex space-x-2 mt-auto">
+                        <!-- Add links here if available -->
+                        <!-- <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">Live Demo</a> -->
+                        <!-- <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">Code Repo</a> -->
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col justify-between">
+                    <h3 class="text-2xl font-bold mb-3 text-blue-600">Recommendation System</h3>
+                    <p class="mb-4 flex-grow text-left">
+                        Engineered a recommendation system leveraging knowledge graphs and LLMs to suggest researchers based on Cypher query generation. Improved explainability by leveraging Cypher queries, graph schemas, and insights from LLMs.
+                    </p>
+                    <p class="text-sm text-gray-600 mb-4 text-left"><strong>Technologies:</strong> Knowledge Graphs, Cypher, LLMs, Explainable AI (XAI)</p>
+                    <div class="flex space-x-2 mt-auto">
+                        <!-- Add links here if available -->
+                        <!-- <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">Live Demo</a> -->
+                        <!-- <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">Code Repo</a> -->
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col justify-between">
+                    <h3 class="text-2xl font-bold mb-3 text-blue-600">Machine Learning in Petrochemicals</h3>
+                    <p class="mb-4 flex-grow text-left">
+                        Conducted research on applying Machine Learning in petrochemicals, focusing on predictive modeling and rock physics analysis.
+                    </p>
+                    <p class="text-sm text-gray-600 mb-4 text-left"><strong>Technologies:</strong> Python, Scikit-learn, Pandas, etc.</p>
+                    <div class="flex space-x-2 mt-auto">
+                        <!-- Add links here if available -->
+                        <!-- <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">Live Demo</a> -->
+                        <!-- <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">Code Repo</a> -->
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col justify-between">
+                    <h3 class="text-2xl font-bold mb-3 text-blue-600">Object Boundary Identification</h3>
+                    <p class="mb-4 flex-grow text-left">
+                        Developed a general-purpose system that can understand object boundaries using pattern matching. Developed a general-purpose object detection system using Deep Learning and works for the retail industry.
+                    </p>
+                    <p class="text-sm text-gray-600 mb-4 text-left"><strong>Technologies:</strong> Linux, OpenCV, PyTorch, Tensorflow, Darknet</p>
+                    <div class="flex space-x-2 mt-auto">
+                        <!-- Add links here if available -->
+                        <!-- <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">Live Demo</a> -->
+                        <!-- <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">Code Repo</a> -->
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col justify-between">
+                    <h3 class="text-2xl font-bold mb-3 text-blue-600">Automated Image Annotation Agent</h3>
+                    <p class="mb-4 flex-grow text-left">
+                        Developed and deployed an adaptive agent for automated image annotation, verification, and upload using an in-house segmentation model compatible with YOLO and ResNet. Integrated AWS S3 for storage, automated annotation workflows, and maintained structured logs in SQLite, enabling continuous improvement through daily adaptive updates.
+                    </p>
+                    <p class="text-sm text-gray-600 mb-4 text-left"><strong>Technologies:</strong> AWS S3, SQLite, Automation</p>
+                    <div class="flex space-x-2 mt-auto">
+                        <!-- Add links here if available -->
+                        <!-- <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">Live Demo</a> -->
+                        <!-- <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">Code Repo</a> -->
+                    </div>
+                </div>
+
+                <!-- Project 7 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col justify-between">
+                    <h3 class="text-2xl font-bold mb-3 text-blue-600">Pickup-point Localization</h3>
+                    <p class="mb-4 flex-grow text-left">
+                        Developed a pattern-matching-based grasping area prediction system that helps robots pick up objects. Developed a grasping area prediction system using Deep Learning. Both image & depth sensor was used for this particular topic.
+                    </p>
+                    <p class="text-sm text-gray-600 mb-4 text-left"><strong>Technologies:</strong> Linux, OpenCV, PyTorch, Tensorflow, Segmentation, Classification, GAN, depth fusion</p>
+                    <div class="flex space-x-2 mt-auto">
+                        <!-- Add links here if available -->
+                        <!-- <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">Live Demo</a> -->
+                        <!-- <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">Code Repo</a> -->
+                    </div>
+                </div>
+
+                <!-- Project 8 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col justify-between">
+                    <h3 class="text-2xl font-bold mb-3 text-blue-600">Object Size & Pose Estimation (3D Reconstruction)</h3>
+                    <p class="mb-4 flex-grow text-left">
+                        Implemented multi-cam calibration for 3D scene reconstruction using RGB and depth images for object size and pose estimation.
+                    </p>
+                    <p class="text-sm text-gray-600 mb-4 text-left"><strong>Technologies:</strong> ZED SDK, OpenCV, Colmap</p>
+                    <div class="flex space-x-2 mt-auto">
+                        <!-- Add links here if available -->
+                        <!-- <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">Live Demo</a> -->
+                        <!-- <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">Code Repo</a> -->
+                    </div>
+                </div>
+
+                <!-- Project 9 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col justify-between">
+                    <h3 class="text-2xl font-bold mb-3 text-blue-600">Particle Detection (Industrial Automation)</h3>
+                    <p class="mb-4 flex-grow text-left">
+                        Automate an industrial process that can detect as small as 1um particles using Image Processing and Deep Learning. Optimize the software to deploy in custom-made low-power hardware. Develop software modules to support the deployment team.
+                    </p>
+                    <p class="text-sm text-gray-600 mb-4 text-left"><strong>Technologies:</strong> Object Detection, OpenCV</p>
+                    <div class="flex space-x-2 mt-auto">
+                        <!-- Add links here if available -->
+                        <!-- <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">Live Demo</a> -->
+                        <!-- <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">Code Repo</a> -->
+                    </div>
+                </div>
+
+                <!-- Project 10 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col justify-between">
+                    <h3 class="text-2xl font-bold mb-3 text-blue-600">Fraud Detection System</h3>
+                    <p class="mb-4 flex-grow text-left">
+                        Data mining to understand the underline pattern of the data. Feature engineering to create a meaningful feature set for user behavior analysis. Apply state-of-the-art Deep Learning models to determine probable fraud users.
+                    </p>
+                    <p class="text-sm text-gray-600 mb-4 text-left"><strong>Technologies:</strong> VAE</p>
+                    <div class="flex space-x-2 mt-auto">
+                        <!-- Add links here if available -->
+                        <!-- <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">Live Demo</a> -->
+                        <!-- <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">Code Repo</a> -->
+                    </div>
+                </div>
+
+                <!-- Project 11 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col justify-between">
+                    <h3 class="text-2xl font-bold mb-3 text-blue-600">Artistic Character Generation using GAN</h3>
+                    <p class="mb-4 flex-grow text-left">
+                        Research about different kinds of GAN (Generative adversarial network) architectures. Develop a GAN to generate artistic Japanese hiragana characters.
+                    </p>
+                    <p class="text-sm text-gray-600 mb-4 text-left"><strong>Technologies:</strong> OpenCV, GAN, Tensorflow</p>
+                    <div class="flex space-x-2 mt-auto">
+                        <!-- Add links here if available -->
+                        <!-- <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">Live Demo</a> -->
+                        <!-- <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">Code Repo</a> -->
+                    </div>
+                </div>
+
+                <!-- Project 12 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col justify-between">
+                    <h3 class="text-2xl font-bold mb-3 text-blue-600">Traffic Prediction System</h3>
+                    <p class="mb-4 flex-grow text-left">
+                        Analyze Time-series data from a certain part of Tokyo and understand the pattern of traffic. Used data mining and Feature engineering to create a meaningful feature and apply deep learning to predict the traffic conditions in a certain place at a particular time.
+                    </p>
+                    <p class="text-sm text-gray-600 mb-4 text-left"><strong>Technologies:</strong> Time-series analysis, CNN, Dilated CNN, multi-model CNN</p>
+                    <div class="flex space-x-2 mt-auto">
+                        <!-- Add links here if available -->
+                        <!-- <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">Live Demo</a> -->
+                        <!-- <a href="#" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">Code Repo</a> -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-blue-600 text-white py-20 md:py-22">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8">Contact Me</h2>
+            <p class="text-lg mb-8">
+                Feel free to reach out if you have any questions or would like to discuss potential collaborations or opportunities.
+            </p>
+            <div class="space-y-4">
+                <div class="flex items-center justify-center">
+                    <img src="https://unpkg.com/lucide-static@latest/icons/mail.svg" alt="Email" class="h-6 w-6 mr-2">
+                    <a href="mailto:mhr6wb@missouri.edu" class="text-white hover:text-blue-200">mhr6wb@missouri.edu</a>
+                </div>
+                <div class="flex items-center justify-center">
+                    <img src="https://unpkg.com/lucide-static@latest/icons/linkedin.svg" alt="LinkedIn" class="h-6 w-6 mr-2">
+                    <a href="https://www.linkedin.com/in/mahadyhasanrayhan/" target="_blank" class="text-white hover:text-blue-200">mahadyhasanrayhan</a>
+                </div>
+                <div class="flex items-center justify-center">
+                    <img src="https://unpkg.com/lucide-static@latest/icons/github.svg" alt="GitHub" class="h-6 w-6 mr-2">
+                    <a href="https://github.com/mahadyRayhan" target="_blank" class="text-white hover:text-blue-200">mahadyRayhan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400 py-6 text-center">
+        <div class="container mx-auto px-6">
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Mahady Hasan Rayhan. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Smooth Scroll JavaScript -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
 </html>
