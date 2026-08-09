@@ -1,322 +1,114 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahady Hasan Rayhan | AI Researcher & Data Scientist</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Custom Config for Tailwind to add brand colors -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
-                    colors: { brand: { 50: '#eff6ff', 100: '#dbeafe', 500: '#3b82f6', 600: '#2563eb', 900: '#1e3a8a' } }
-                }
-            }
-        }
-    </script>
-    <style>
-        .glass-nav { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05); }
-        .gradient-text { background: linear-gradient(to right, #2563eb, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    </style>
-</head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-500 selection:text-white">
+<!-- Header -->
+<header id="header" class="alt">
+    <span class="logo"><img src="images/logo.svg" alt="Logo" /></span>
+    <h1>Mahady Hasan Rayhan[cite: 1]</h1>
+    <p>Ph.D. Candidate in Computer Science | AI Vision & Machine Learning Engineer</p>
+</header>
 
-    <!-- Navigation -->
-    <nav class="fixed w-full glass-nav z-50 transition-all duration-300">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <a href="#" class="font-bold text-2xl tracking-tight text-slate-900">M. Rayhan<span class="text-brand-600">.</span></a>
-                <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#about" class="text-slate-600 hover:text-brand-600 font-medium transition">About</a>
-                    <a href="#projects" class="text-slate-600 hover:text-brand-600 font-medium transition">Research & Projects</a>
-                    <a href="#publications" class="text-slate-600 hover:text-brand-600 font-medium transition">Publications</a>
-                    <a href="#experience" class="text-slate-600 hover:text-brand-600 font-medium transition">Experience</a>
-                    <a href="mailto:mhr6wb@missouri.edu" class="bg-slate-900 text-white px-5 py-2.5 rounded-full hover:bg-brand-600 transition shadow-md font-medium">Let's Talk</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+<!-- Nav -->
+<nav id="nav">
+    <ul>
+        <li><a href="#intro" class="active">Overview</a></li>
+        <li><a href="#experience">Industry Experience</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#skills">Tech Stack</a></li>
+    </ul>
+</nav>
 
-    <!-- Hero Section -->
-    <section class="pt-32 pb-20 lg:pt-48 lg:pb-32 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-20">
-        <!-- Text Content -->
-        <div class="flex-1 text-center lg:text-left">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 text-brand-600 font-medium text-sm mb-6 border border-brand-100">
-                <span class="relative flex h-2 w-2">
-                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-500 opacity-75"></span>
-                  <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-600"></span>
-                </span>
-                Available for Research & ML Roles
-            </div>
-            <h1 class="text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight mb-4 leading-tight">
-                Hi, I'm Mahady <br>
-                <span class="gradient-text">AI Researcher & Data Scientist</span>
-            </h1>
-            <p class="text-lg text-slate-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                I build autonomous Agentic AI systems, optimize Large Language Models (LLMs), and engineer advanced machine learning pipelines. Currently pursuing my Master's at the University of Missouri.
-            </p>
-            
-            <!-- Social Links -->
-            <div class="flex flex-wrap justify-center lg:justify-start gap-4 mb-8">
-                <a href="https://scholar.google.com/citations?user=uBkjbx8AAAAJ&hl=en" target="_blank" class="flex items-center gap-2 bg-white border border-slate-200 text-slate-700 px-5 py-2.5 rounded-lg hover:border-brand-500 hover:text-brand-600 transition shadow-sm font-medium">
-                    <i class="fa-solid fa-graduation-cap text-lg"></i> Google Scholar
-                </a>
-                <a href="https://github.com/mahadyRayhan" target="_blank" class="flex items-center gap-2 bg-white border border-slate-200 text-slate-700 px-5 py-2.5 rounded-lg hover:border-brand-500 hover:text-brand-600 transition shadow-sm font-medium">
-                    <i class="fa-brands fa-github text-lg"></i> GitHub
-                </a>
-                <a href="https://medium.com/@rayhan.feluda" target="_blank" class="flex items-center gap-2 bg-white border border-slate-200 text-slate-700 px-5 py-2.5 rounded-lg hover:border-brand-500 hover:text-brand-600 transition shadow-sm font-medium">
-                    <i class="fa-brands fa-medium text-lg"></i> Medium
-                </a>
-                <a href="https://www.linkedin.com/in/mahadyhasanrayhan/" target="_blank" class="flex items-center gap-2 bg-white border border-slate-200 text-slate-700 px-5 py-2.5 rounded-lg hover:border-brand-500 hover:text-brand-600 transition shadow-sm font-medium">
-                    <i class="fa-brands fa-linkedin text-lg text-[#0A66C2]"></i> LinkedIn
-                </a>
-            </div>
-        </div>
+<!-- Main -->
+<div id="main">
 
-        <!-- Profile Image Placeholder -->
-        <div class="flex-shrink-0 relative">
-            <div class="absolute inset-0 bg-gradient-to-tr from-brand-500 to-cyan-400 rounded-full blur-2xl opacity-20 animate-pulse"></div>
-            <!-- REPLACE THIS IMAGE SRC WITH YOUR ACTUAL PHOTO URL ON GITHUB -->
-            <img src="https://ui-avatars.com/api/?name=Mahady+Rayhan&size=512&background=1e3a8a&color=fff&rounded=true&bold=true" alt="Mahady Hasan Rayhan" class="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full object-cover border-4 border-white shadow-2xl">
+    <!-- Introduction -->
+    <section id="intro" class="main">
+        <div class="spotlight">
+            <div class="content">
+                <header class="major">
+                    <h2>About Me</h2>
+                </header>
+                <p>I am a Ph.D. Candidate in Computer Science at the University of Missouri-Columbia, holding a Bachelor's degree in Computer Science. I am deeply passionate about the convergence of AI, Machine Learning, and their real-world applications. With over five years of professional engineering experience, my research and work focus on Knowledge Graphs, Generative AI, and Agent-based Systems to solve complex industrial challenges.</p>
+                <ul class="actions">
+                    <li><a href="mailto:mhr6wb@missouri.edu" class="button">mhr6wb@missouri.edu[cite: 1]</a></li>
+                </ul>
+            </div>
+            <span class="image"><img src="https://github-readme-stats-sigma-five.vercel.app/api?username=mahadyRayhan&show_icons=true&theme=radical&count_private=true&bg_color=181818&title_color=27AE60&text_color=FFFFFF&icon_color=27AE60&border_color=44475A" alt="GitHub Stats" /></span>
         </div>
     </section>
 
-    <!-- About & Skills Section -->
-    <section id="about" class="py-20 bg-white border-y border-slate-100">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row gap-16">
-            <div class="md:w-1/2">
-                <h2 class="text-3xl font-bold text-slate-900 mb-6">About Me</h2>
-                <p class="text-slate-600 leading-relaxed mb-4">
-                    My journey in AI is driven by a passion for solving complex, real-world problems. Whether it's orchestrating multi-agent LLM systems for intelligent tutoring, designing reinforcement learning platforms for cybersecurity, or engineering robust computer vision models for industrial robotics in Tokyo, I love bridging the gap between theoretical research and scalable production.
-                </p>
-                <p class="text-slate-600 leading-relaxed">
-                    I am currently a Graduate Research Assistant at the <strong>University of Missouri</strong>, where I'm expanding my expertise in Agentic AI, Parameter-Efficient Fine-Tuning (PEFT), and hybrid Retrieval-Augmented Generation (RAG) architectures.
-                </p>
-            </div>
-            <div class="md:w-1/2">
-                <h2 class="text-3xl font-bold text-slate-900 mb-6">Core Stack</h2>
-                <div class="space-y-4">
-                    <div>
-                        <h4 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-2">Machine Learning & AI</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-brand-50 text-brand-700 px-3 py-1 rounded-md text-sm font-medium border border-brand-100">PyTorch</span>
-                            <span class="bg-brand-50 text-brand-700 px-3 py-1 rounded-md text-sm font-medium border border-brand-100">TensorFlow</span>
-                            <span class="bg-brand-50 text-brand-700 px-3 py-1 rounded-md text-sm font-medium border border-brand-100">LLMs & RAG</span>
-                            <span class="bg-brand-50 text-brand-700 px-3 py-1 rounded-md text-sm font-medium border border-brand-100">Reinforcement Learning</span>
-                        </div>
-                    </div>
-                    <div>
-                        <h4 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-2">Engineering & Backend</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-md text-sm font-medium border border-slate-200">Python</span>
-                            <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-md text-sm font-medium border border-slate-200">C++ / Java</span>
-                            <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-md text-sm font-medium border border-slate-200">FastAPI</span>
-                            <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-md text-sm font-medium border border-slate-200">Neo4j (Graph DB)</span>
-                        </div>
-                    </div>
-                    <div>
-                        <h4 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-2">Cloud & MLOps</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-md text-sm font-medium border border-slate-200">AWS (EC2, S3)</span>
-                            <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-md text-sm font-medium border border-slate-200">Docker</span>
-                            <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-md text-sm font-medium border border-slate-200">MLflow</span>
-                            <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-md text-sm font-medium border border-slate-200">Spark / Hadoop</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Industry Experience -->
+    <section id="experience" class="main special">
+        <header class="major">
+            <h2>Industry Experience</h2>
+        </header>
+        <div class="features">
+            <article>
+                <h3>AI Vision Engineer (R&D Industrial Automation)[cite: 1]</h3>
+                <p><strong>ROMS Co., Ltd. | Tokyo, Japan | 01/2022 - 12/2023[cite: 1]</strong></p>
+                <ul style="text-align: left;">
+                    <li>Engineered the core AI vision models for an industrial robotic piece-picking system[cite: 1], driving the picking success rate from 0% to 96% over two years[cite: 1] (custom deep learning model at 95.8% mAP)[cite: 1].</li>
+                    <li>Cut system cycle time by 70% by optimizing model inference[cite: 1], grasping-point logic[cite: 1], and 3D reconstruction[cite: 1].</li>
+                    <li>Developed and deployed an adaptive agent for automated image annotation, verification, and upload[cite: 1].</li>
+                    <li>Built a real-time dashboard tracking pick-and-place success/failure and error reasons[cite: 1], with 3D object visualization and log filtering[cite: 1].</li>
+                </ul>
+            </article>
+            <article>
+                <h3>Machine Learning & Edge AI Engineer[cite: 1]</h3>
+                <p><strong>Yamaha Robotics Holdings Co., Ltd. | Tokyo, Japan | 04/2020 - 01/2022[cite: 1]</strong></p>
+                <ul style="text-align: left;">
+                    <li>Owned the full, end-to-end development of an automated industrial inspection system to detect microscopic particles[cite: 1], achieving 90-95% detection accuracy in early testing[cite: 1].</li>
+                    <li>Single-handedly managed the entire project lifecycle[cite: 1], from annotating the initial dataset and processing images to building and optimizing the final deep learning model for deployment on custom low-power hardware[cite: 1].</li>
+                </ul>
+            </article>
+            <article>
+                <h3>AI Engineer[cite: 1]</h3>
+                <p><strong>Hiperdyne Corporation | Tokyo, Japan | 12/2018 - 03/2020[cite: 1]</strong></p>
+                <ul style="text-align: left;">
+                    <li>Built and deployed a deep learning fraud detection model[cite: 1], cutting false positives 56%[cite: 1] and boosting precision 44%[cite: 1].</li>
+                    <li>Forecast Tokyo traffic conditions by location and time using a deep learning model over engineered time-series features[cite: 1].</li>
+                </ul>
+            </article>
         </div>
     </section>
 
-    <!-- Featured Projects Section -->
-    <section id="projects" class="py-20 bg-slate-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Featured Research & Projects</h2>
-                <p class="text-lg text-slate-600 max-w-2xl mx-auto">A selection of my architectural designs and models deployed in research and industrial environments.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition duration-300 border border-slate-100 group relative flex flex-col h-full">
-                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition">
-                        <i class="fa-solid fa-brain"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Agentic AI Tutor & Hybrid RAG</h3>
-                    <p class="text-slate-600 text-sm mb-6 flex-grow">
-                        Architected an educational system orchestrating 6 specialized LLM agents. Integrated a Neo4j/ChromaDB hybrid RAG pipeline mapping topological prerequisite paths, featuring a quantized local model inference pipeline achieving sub-50ms intent classification.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mt-auto">
-                        <span class="text-xs font-semibold text-slate-500 bg-slate-100 px-2 py-1 rounded">LLMs</span>
-                        <span class="text-xs font-semibold text-slate-500 bg-slate-100 px-2 py-1 rounded">Neo4j</span>
-                        <span class="text-xs font-semibold text-slate-500 bg-slate-100 px-2 py-1 rounded">FastAPI</span>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition duration-300 border border-slate-100 group relative flex flex-col h-full">
-                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition">
-                        <i class="fa-solid fa-robot"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Industrial 3D Vision Automation</h3>
-                    <p class="text-slate-600 text-sm mb-6 flex-grow">
-                        Engineered core vision models for robotic piece-picking in Tokyo, driving success rates from 0% to 96%. Slashed cycle times by 70% utilizing custom deep learning models (95.8% mAP) and robust 3D scene reconstruction calibration.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mt-auto">
-                        <span class="text-xs font-semibold text-slate-500 bg-slate-100 px-2 py-1 rounded">PyTorch</span>
-                        <span class="text-xs font-semibold text-slate-500 bg-slate-100 px-2 py-1 rounded">Computer Vision</span>
-                        <span class="text-xs font-semibold text-slate-500 bg-slate-100 px-2 py-1 rounded">3D Reconstruction</span>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition duration-300 border border-slate-100 group relative flex flex-col h-full">
-                    <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Adaptive Cybersecurity Training</h3>
-                    <p class="text-slate-600 text-sm mb-6 flex-grow">
-                        Developed an AI-driven platform using Reinforcement Learning (PPO) that achieved a 100% objective completion rate. Features a low-latency (<1.4s) RAG-based AI assistant scoring perfectly in retrieval and safety guardrails.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mt-auto">
-                        <span class="text-xs font-semibold text-slate-500 bg-slate-100 px-2 py-1 rounded">PPO</span>
-                        <span class="text-xs font-semibold text-slate-500 bg-slate-100 px-2 py-1 rounded">RAG</span>
-                        <span class="text-xs font-semibold text-slate-500 bg-slate-100 px-2 py-1 rounded">JavaScript</span>
-                    </div>
-                </div>
-            </div>
+    <!-- Research -->
+    <section id="research" class="main special">
+        <header class="major">
+            <h2>Academic Research</h2>
+        </header>
+        <div class="features">
+            <article>
+                <h3>Graduate Research Assistant[cite: 1]</h3>
+                <p><strong>University of Missouri | 08/2024 - Present[cite: 1]</strong></p>
+                <ul style="text-align: left;">
+                    <li>Architected a multi-agent orchestration framework coordinating four specialist agents over a DAG[cite: 1], with adaptive context-passing in between agents[cite: 1], profile-on-task reasoning[cite: 1], and Reflexion-based self-healing[cite: 1].</li>
+                    <li>Architected a multi-agent AI tutor with FastAPI orchestrating 6 role-specialized LLM agents over a hybrid Neo4j knowledge-graph and vector RAG pipeline[cite: 1].</li>
+                    <li>Architected an Agentic AI training platform using FastAPI and JavaScript[cite: 1], integrating a Reinforcement Learning agent that achieved a 100% objective completion rate[cite: 1].</li>
+                    <li>Architected ARES-Vidura, a hybrid Entity-Relation + vector RAG agent with multi-hop reasoning[cite: 1], resolving complex multi-step scientific queries at ~86% accuracy[cite: 1] at 6.6x lower latency than a proprietary Gemini baseline[cite: 1].</li>
+                </ul>
+            </article>
         </div>
+        <footer class="major">
+            <h3>Selected Publications</h3>
+            <ul style="text-align: left;">
+                <li>Closed-Loop CNT Growth Using Retrieval Augmented Generation and Human Feedback[cite: 1].</li>
+                <li>Federated Learning for Smart Manufacturing: Evaluating Deep Learning Architectures for Time Series Forecasting in a Collaborative Framework[cite: 1].</li>
+                <li>SAGE: Student-focused Adaptive Guidance Engine for Intelligent Tutoring with Regulated Learning[cite: 1].</li>
+            </ul>
+        </footer>
     </section>
 
-    <!-- Publications Section -->
-    <section id="publications" class="py-20 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-end mb-10 border-b pb-4 border-slate-200">
-                <h2 class="text-3xl font-bold text-slate-900">Selected Publications</h2>
-                <a href="https://scholar.google.com/citations?user=uBkjbx8AAAAJ&hl=en" target="_blank" class="text-brand-600 hover:text-brand-800 font-medium text-sm flex items-center gap-2 transition">
-                    View on Google Scholar <i class="fa-solid fa-arrow-right"></i>
-                </a>
-            </div>
-            
-            <div class="space-y-6">
-                <!-- Paper 1 -->
-                <div class="group flex flex-col sm:flex-row gap-4 items-start p-4 rounded-xl hover:bg-slate-50 transition">
-                    <div class="bg-slate-100 p-3 rounded-lg text-slate-400 group-hover:text-brand-500 group-hover:bg-brand-50 transition">
-                        <i class="fa-regular fa-file-lines text-2xl"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-slate-900 leading-snug mb-1">Closed-Loop CNT Growth Using Retrieval Augmented Generation and Human Feedback</h3>
-                        <p class="text-slate-600 text-sm mb-2">2025 IEEE 5th International Conference on Human-Machine Systems (ICHMS)</p>
-                    </div>
-                </div>
-
-                <!-- Paper 2 -->
-                <div class="group flex flex-col sm:flex-row gap-4 items-start p-4 rounded-xl hover:bg-slate-50 transition">
-                    <div class="bg-slate-100 p-3 rounded-lg text-slate-400 group-hover:text-brand-500 group-hover:bg-brand-50 transition">
-                        <i class="fa-regular fa-file-lines text-2xl"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-slate-900 leading-snug mb-1">Federated Learning for Smart Manufacturing: Evaluating Deep Learning Architectures for Time Series Forecasting in a Collaborative Framework</h3>
-                        <p class="text-slate-600 text-sm mb-2">Springer Nature Switzerland - 2025</p>
-                    </div>
-                </div>
-
-                <!-- Paper 3 -->
-                <div class="group flex flex-col sm:flex-row gap-4 items-start p-4 rounded-xl hover:bg-slate-50 transition">
-                    <div class="bg-slate-100 p-3 rounded-lg text-slate-400 group-hover:text-brand-500 group-hover:bg-brand-50 transition">
-                        <i class="fa-regular fa-file-lines text-2xl"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-slate-900 leading-snug mb-1">SAGE: Student-focused Adaptive Guidance Engine for Intelligent Tutoring with Regulated Learning</h3>
-                        <p class="text-slate-600 text-sm mb-2">2026 IEEE 6th International Conference on Human-Machine Systems (ICHMS)</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- Skills -->
+    <section id="skills" class="main">
+        <header class="major">
+            <h2>Technical Skills</h2>
+        </header>
+        <ul style="text-align: left;">
+            <li><strong>GenAI & Agents:</strong> Multi-Agent Systems, RAG, LLM Evaluation, DSPy, Prompt Optimization[cite: 1].</li>
+            <li><strong>LLMOps/MLOps:</strong> MLflow, DVC, Docker, vLLM[cite: 1].</li>
+            <li><strong>Cloud & Data Systems:</strong> AWS (EC2, S3), Kafka, Spark[cite: 1].</li>
+            <li><strong>ML/Deep Learning:</strong> scikit-learn, PyTorch, TensorFlow[cite: 1].</li>
+            <li><strong>Fine-Tuning & RL:</strong> PEFT/LORA, PPO, Q-learning[cite: 1].</li>
+            <li><strong>Languages & DBs:</strong> Python, Java, C++ SQL, Neo4j, Vector DB[cite: 1].</li>
+        </ul>
     </section>
 
-    <!-- Experience Timeline -->
-    <section id="experience" class="py-20 bg-slate-50">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-slate-900 mb-12 text-center">Work & Education Journey</h2>
-            
-            <div class="relative border-l-2 border-brand-200 ml-3 md:ml-6 space-y-12">
-                <!-- Item 1 -->
-                <div class="relative pl-8 md:pl-10">
-                    <div class="absolute w-6 h-6 bg-brand-500 rounded-full -left-[13px] border-4 border-white shadow-sm"></div>
-                    <div class="mb-1 text-sm font-bold text-brand-600">08/2024 – Present &bull; Columbia, MO</div>
-                    <h3 class="text-xl font-bold text-slate-900">Graduate Research Assistant</h3>
-                    <h4 class="text-lg font-medium text-slate-600 mb-3">University of Missouri Columbia</h4>
-                    <p class="text-slate-600 text-sm">Spearheading research in Agentic AI, Multi-Modal RAG, and AI for Semiconductor Inverse Modeling. Engineering advanced SFT pipelines utilizing PEFT with LoRA adapters and quantization.</p>
-                </div>
-
-                <!-- Item 2 -->
-                <div class="relative pl-8 md:pl-10">
-                    <div class="absolute w-6 h-6 bg-slate-300 rounded-full -left-[13px] border-4 border-white"></div>
-                    <div class="mb-1 text-sm font-bold text-slate-500">01/2022 – 12/2023 &bull; Tokyo, Japan</div>
-                    <h3 class="text-xl font-bold text-slate-900">AI Vision Engineer</h3>
-                    <h4 class="text-lg font-medium text-slate-600 mb-3">ROMS Co., Ltd.</h4>
-                    <p class="text-slate-600 text-sm">Led the R&D for industrial automation. Developed core AI vision models for robotic piece-picking, adaptive image annotation agents, and real-time visualization dashboards.</p>
-                </div>
-
-                <!-- Item 3 -->
-                <div class="relative pl-8 md:pl-10">
-                    <div class="absolute w-6 h-6 bg-slate-300 rounded-full -left-[13px] border-4 border-white"></div>
-                    <div class="mb-1 text-sm font-bold text-slate-500">04/2020 – 01/2022 &bull; Tokyo, Japan</div>
-                    <h3 class="text-xl font-bold text-slate-900">Machine Learning & Edge AI Engineer</h3>
-                    <h4 class="text-lg font-medium text-slate-600 mb-3">Yamaha Robotics Holdings Co., Ltd.</h4>
-                    <p class="text-slate-600 text-sm">Owned end-to-end development of an automated industrial inspection system to detect microscopic particles, optimizing deep learning models for deployment on low-power hardware.</p>
-                </div>
-
-                <!-- Item 4 -->
-                <div class="relative pl-8 md:pl-10">
-                    <div class="absolute w-6 h-6 bg-slate-300 rounded-full -left-[13px] border-4 border-white"></div>
-                    <div class="mb-1 text-sm font-bold text-slate-500">12/2018 – 03/2020 &bull; Tokyo, Japan</div>
-                    <h3 class="text-xl font-bold text-slate-900">AI Engineer</h3>
-                    <h4 class="text-lg font-medium text-slate-600 mb-3">Hiperdyne Corporation</h4>
-                    <p class="text-slate-600 text-sm">Developed a Variational Autoencoder (VAE) for fraud detection, reducing false positives by 56%, and built a deep learning traffic prediction system.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-slate-900 py-12 text-center border-t border-slate-800">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-2xl font-bold text-white mb-6">Let's Connect</h2>
-            <div class="flex justify-center space-x-6 mb-8">
-                <a href="https://scholar.google.com/citations?user=uBkjbx8AAAAJ&hl=en" target="_blank" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-brand-600 hover:text-white transition">
-                    <i class="fa-solid fa-graduation-cap text-xl"></i>
-                </a>
-                <a href="https://medium.com/@rayhan.feluda" target="_blank" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-brand-600 hover:text-white transition">
-                    <i class="fa-brands fa-medium text-xl"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/mahadyhasanrayhan/" target="_blank" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-[#0A66C2] hover:text-white transition">
-                    <i class="fa-brands fa-linkedin text-xl"></i>
-                </a>
-                <a href="https://github.com/mahadyRayhan" target="_blank" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-slate-600 hover:text-white transition">
-                    <i class="fa-brands fa-github text-xl"></i>
-                </a>
-                <a href="mailto:mhr6wb@missouri.edu" class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-brand-500 hover:text-white transition">
-                    <i class="fa-solid fa-envelope text-xl"></i>
-                </a>
-            </div>
-            <p class="text-slate-500 text-sm">
-                &copy; <span id="year"></span> Mahady Hasan Rayhan. All rights reserved.
-            </p>
-        </div>
-    </footer>
-
-    <!-- Script -->
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-</body>
-</html>
+</div>
