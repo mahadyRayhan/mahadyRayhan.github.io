@@ -44,7 +44,8 @@ a{color:inherit}
 /* ---------- hero ---------- */
 .hero{
   background:var(--ink);color:var(--paper);position:relative;overflow:hidden;
-  padding:clamp(3.5rem,9vw,6rem) 0 clamp(2rem,5vw,3.2rem);
+  min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(2rem,5vh,3.4rem) 0;
 }
 .hero::before{
   content:"";position:absolute;inset:0;
@@ -61,19 +62,19 @@ a{color:inherit}
 .hero .wrap{position:relative;z-index:2}
 .hero h1{
   font-family:var(--display);font-weight:400;
-  font-size:clamp(2.8rem,8.4vw,5.6rem);line-height:.98;
-  margin:0 0 1.1rem;letter-spacing:-.01em;
+  font-size:clamp(2.5rem,6.6vw,5.2rem);line-height:1;
+  margin:0 0 clamp(.7rem,1.6vh,1.1rem);letter-spacing:-.01em;
 }
 .hero h1 em{font-style:italic;color:var(--amber)}
 .thesis{
-  font-size:clamp(1.02rem,2vw,1.24rem);max-width:44ch;color:rgba(241,243,242,.82);
-  margin:0 0 1.6rem;
+  font-size:clamp(1rem,1.7vw,1.2rem);max-width:52ch;color:rgba(241,243,242,.82);
+  margin:0 0 clamp(.9rem,2vh,1.5rem);
 }
 .hero-meta{
   font-family:var(--mono);font-size:.76rem;letter-spacing:.06em;
-  color:rgba(241,243,242,.6);margin:0 0 2.2rem;
+  color:rgba(241,243,242,.6);margin:0 0 clamp(1.2rem,2.6vh,2rem);
 }
-.links{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 clamp(2.4rem,6vw,3.6rem);padding:0;list-style:none}
+.links{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 clamp(1.6rem,4vh,3rem);padding:0;list-style:none}
 .links a{
   display:inline-block;text-decoration:none;font-family:var(--mono);font-size:.78rem;
   letter-spacing:.06em;padding:.5rem .9rem;border:1px solid var(--line-dark);
@@ -82,12 +83,14 @@ a{color:inherit}
 .links a:hover{background:var(--amber);border-color:var(--amber);color:var(--ink)}
 
 /* ---------- signature: the pipeline ---------- */
-.pipeline{border-top:1px solid var(--line-dark);padding-top:1.6rem}
+.pipeline{border-top:1px solid var(--line-dark);padding-top:clamp(.9rem,2.2vh,1.6rem)}
 .pipeline-cap{
   font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
-  color:rgba(241,243,242,.5);margin:0 0 .9rem;
+  color:rgba(241,243,242,.5);margin:0 0 clamp(.4rem,1.2vh,.9rem);
 }
-.pipeline svg{width:100%;height:auto;display:block;overflow:visible}
+.pipeline svg{
+  width:100%;max-width:min(100%,88vh);height:auto;display:block;overflow:visible;
+}
 .node rect{
   fill:rgba(241,243,242,.04);stroke:var(--line-dark);stroke-width:1;
   transition:fill .2s,stroke .2s;
@@ -134,9 +137,14 @@ nav a:hover{color:var(--ink);border-bottom-color:var(--amber)}
 section{padding:clamp(3.2rem,7vw,5.2rem) 0;border-bottom:1px solid var(--line)}
 section h2{
   font-family:var(--display);font-weight:400;font-size:clamp(1.9rem,4.4vw,2.9rem);
-  line-height:1.06;margin:0 0 .7rem;letter-spacing:-.01em;
+  line-height:1.06;margin:0;letter-spacing:-.01em;
 }
-.lede{max-width:60ch;color:var(--slate);margin:0 0 2.6rem}
+.section-head{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:clamp(1rem,4vw,3rem);align-items:end;margin:0 0 2.8rem;
+}
+.lede{max-width:46ch;color:var(--slate);margin:0}
+.lede a{color:var(--teal)}
 
 /* research threads */
 .threads{display:grid;gap:0}
@@ -213,6 +221,8 @@ section h2{
 
 @media (max-width:760px){
   .thread,.pub,.role{grid-template-columns:1fr;gap:.9rem}
+  .section-head{grid-template-columns:1fr;gap:1rem;align-items:start}
+  .lede{max-width:none}
   .pub-venue,.role-when{order:-1}
   nav ul{gap:1.2rem}
 }
@@ -222,17 +232,17 @@ section h2{
 
 <header class="hero">
   <div class="wrap">
-    <p class="eyebrow eyebrow-dark">M.S. Computer Science &middot; University of Missouri</p>
+    <p class="eyebrow eyebrow-dark">Ph.D. Student, Computer Science &middot; University of Missouri</p>
     <h1>Mahady Hasan Rayhan<em>.</em></h1>
     <p class="thesis">I build AI systems that plan their own work, hand pieces of it to specialists, check the results, and fix themselves when the check fails.</p>
-    <p class="hero-meta">Columbia, Missouri &middot; previously Tokyo — 5 yrs shipping vision &amp; edge ML in production</p>
+    <p class="hero-meta">M.S. Computer Science, 2026 &middot; Columbia, Missouri &middot; previously Tokyo — 5 yrs shipping vision &amp; edge ML in production</p>
 
     <ul class="links">
       <li><a href="mailto:mhr6wb@missouri.edu">Email</a></li>
       <li><a href="https://scholar.google.com/citations?user=uBkjbx8AAAAJ&hl=en">Google Scholar</a></li>
       <li><a href="https://github.com/mahadyRayhan">GitHub</a></li>
-      <li><a href="https://www.linkedin.com/in/mahady-hasan-rayhan/">LinkedIn</a></li>
-      <li><a href="Mahady_Hasan_Rayhan_CV.pdf">CV (PDF)</a></li>
+      <li><a href="https://www.linkedin.com/in/mahadyhasanrayhan/">LinkedIn</a></li>
+      <li><a href="https://mahadyrayhan.github.io/Mahady_Hasan_Rayhan_CV.pdf">CV (PDF)</a></li>
     </ul>
 
     <div class="pipeline">
@@ -305,9 +315,13 @@ section h2{
 
 <section id="research">
   <div class="wrap">
-    <p class="eyebrow">Research</p>
-    <h2>Four places I've pointed the same idea</h2>
-    <p class="lede">Every project below is a version of one question: what has to be true for a system of language models to be trusted with real work? Different domains stress different answers — pedagogy, scientific reasoning, device physics, safety.</p>
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Research</p>
+        <h2>Four places I've pointed the same idea</h2>
+      </div>
+      <p class="lede">Every project below is a version of one question: what has to be true for a system of language models to be trusted with real work? Different domains stress different answers — pedagogy, scientific reasoning, device physics, safety.</p>
+    </div>
 
     <div class="threads">
 
@@ -376,9 +390,13 @@ section h2{
 
 <section id="publications">
   <div class="wrap">
-    <p class="eyebrow">Publications</p>
-    <h2>Peer-reviewed work</h2>
-    <p class="lede">Full list and citation counts on <a href="https://scholar.google.com/citations?user=uBkjbx8AAAAJ&hl=en">Google Scholar</a>.</p>
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Publications</p>
+        <h2>Peer-reviewed work</h2>
+      </div>
+      <p class="lede">Full list and citation counts on <a href="https://scholar.google.com/citations?user=uBkjbx8AAAAJ&hl=en">Google Scholar</a>.</p>
+    </div>
 
     <ul class="pubs">
       <li class="pub">
@@ -408,9 +426,13 @@ section h2{
 
 <section id="industry">
   <div class="wrap">
-    <p class="eyebrow">Industry</p>
-    <h2>Five years of models that had to work on Monday</h2>
-    <p class="lede">Before the research, production computer vision and edge ML in Tokyo — where a model that fails is a robot arm that stops and a line that backs up.</p>
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Industry</p>
+        <h2>Five years of models that had to work on Monday</h2>
+      </div>
+      <p class="lede">Before the research, production computer vision and edge ML in Tokyo — where a model that fails is a robot arm that stops and a line that backs up.</p>
+    </div>
 
     <article class="role">
       <div class="role-when"><b>2022&ndash;2023</b>ROMS Co., Ltd.<br>Tokyo</div>
@@ -455,8 +477,13 @@ section h2{
 
 <section id="stack">
   <div class="wrap">
-    <p class="eyebrow">Stack</p>
-    <h2>What I reach for</h2>
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Stack</p>
+        <h2>What I reach for</h2>
+      </div>
+      <p class="lede">Chosen for what the problem needs, not what's new. Most projects use a handful of these at once.</p>
+    </div>
     <div class="stack">
       <div>
         <h3>Agents &amp; GenAI</h3>
@@ -488,14 +515,18 @@ section h2{
 
 <section id="contact" class="contact">
   <div class="wrap">
-    <p class="eyebrow eyebrow-dark">Contact</p>
-    <h2>Open to research collaborations<br>and applied AI roles.</h2>
-    <p class="lede">If you're working on agentic systems, scientific ML, or anything where a model's output has to be checked before it's trusted — I'd like to hear about it.</p>
+    <div class="section-head">
+      <div>
+        <p class="eyebrow eyebrow-dark">Contact</p>
+        <h2>Open to research collaborations<br>and applied AI roles.</h2>
+      </div>
+      <p class="lede">If you're working on agentic systems, scientific ML, or anything where a model's output has to be checked before it's trusted — I'd like to hear about it.</p>
+    </div>
     <ul class="links">
       <li><a href="mailto:mhr6wb@missouri.edu">mhr6wb@missouri.edu</a></li>
       <li><a href="https://scholar.google.com/citations?user=uBkjbx8AAAAJ&hl=en">Google Scholar</a></li>
       <li><a href="https://github.com/mahadyRayhan">GitHub</a></li>
-      <li><a href="https://www.linkedin.com/in/mahady-hasan-rayhan/">LinkedIn</a></li>
+      <li><a href="https://www.linkedin.com/in/mahadyhasanrayhan/">LinkedIn</a></li>
     </ul>
     <p class="colophon">Set in Instrument Serif and IBM Plex &middot; Columbia, Missouri</p>
   </div>
