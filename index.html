@@ -6,6 +6,19 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		
+		<!-- Library for the Interactive Knowledge Graph -->
+		<script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+		<style>
+			#mynetwork {
+				width: 100%;
+				height: 500px;
+				border-radius: 8px;
+				background-color: #ffffff;
+				border: 1px solid #e5e5e5;
+				margin-bottom: 2em;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -22,7 +35,8 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul>
-							<li><a href="#intro" class="active">Overview</a></li>
+							<li><a href="#graph-section" class="active">AI Knowledge Graph</a></li>
+							<li><a href="#intro">Overview</a></li>
 							<li><a href="#experience">Industry Experience</a></li>
 							<li><a href="#research">Research</a></li>
 							<li><a href="#skills">Tech Stack</a></li>
@@ -31,6 +45,15 @@
 
 				<!-- Main -->
 					<div id="main">
+
+						<!-- Interactive Knowledge Graph Section -->
+							<section id="graph-section" class="main special">
+								<header class="major">
+									<h2>My Research Universe</h2>
+									<p>Drag the nodes to interact with the core areas of my work.</p>
+								</header>
+								<div id="mynetwork"></div>
+							</section>
 
 						<!-- Introduction -->
 							<section id="intro" class="main">
@@ -49,65 +72,62 @@
 							</section>
 
 						<!-- Industry Experience -->
-							<section id="experience" class="main special">
+							<section id="experience" class="main">
 								<header class="major">
 									<h2>Industry Experience</h2>
 								</header>
-								<div class="features">
-									<article>
-										<h3>AI Vision Engineer (R&D Industrial Automation)</h3>
-										<p><strong>ROMS Co., Ltd. | Tokyo, Japan | 01/2022 - 12/2023</strong></p>
-										<ul style="text-align: left;">
-											<li>Engineered the core AI vision models for an industrial robotic piece-picking system, driving the picking success rate from 0% to 96% over two years (custom deep learning model at 95.8% mAP).</li>
-											<li>Cut system cycle time by 70% by optimizing model inference, grasping-point logic, and 3D reconstruction.</li>
-											<li>Developed and deployed an adaptive agent for automated image annotation, verification, and upload.</li>
-											<li>Built a real-time dashboard tracking pick-and-place success/failure and error reasons, with 3D object visualization and log filtering.</li>
-										</ul>
-									</article>
-									<article>
-										<h3>Machine Learning & Edge AI Engineer</h3>
-										<p><strong>Yamaha Robotics Holdings Co., Ltd. | Tokyo, Japan | 04/2020 - 01/2022</strong></p>
-										<ul style="text-align: left;">
-											<li>Owned the full, end-to-end development of an automated industrial inspection system to detect microscopic particles, achieving 90-95% detection accuracy in early testing.</li>
-											<li>Single-handedly managed the entire project lifecycle, from annotating the initial dataset and processing images to building and optimizing the final deep learning model for deployment on custom low-power hardware.</li>
-										</ul>
-									</article>
-									<article>
-										<h3>AI Engineer</h3>
-										<p><strong>Hiperdyne Corporation | Tokyo, Japan | 12/2018 - 03/2020</strong></p>
-										<ul style="text-align: left;">
-											<li>Built and deployed a deep learning fraud detection model, cutting false positives 56% and boosting precision 44%.</li>
-											<li>Forecast Tokyo traffic conditions by location and time using a deep learning model over engineered time-series features.</li>
-										</ul>
-									</article>
+								<div class="content">
+									<h3>AI Vision Engineer (R&D Industrial Automation)</h3>
+									<p><strong>ROMS Co., Ltd. | Tokyo, Japan | 01/2022 - 12/2023</strong></p>
+									<ul>
+										<li>Engineered the core AI vision models for an industrial robotic piece-picking system, driving the picking success rate from 0% to 96% over two years (custom deep learning model at 95.8% mAP).</li>
+										<li>Cut system cycle time by 70% by optimizing model inference, grasping-point logic, and 3D reconstruction.</li>
+										<li>Developed and deployed an adaptive agent for automated image annotation, verification, and upload.</li>
+										<li>Built a real-time dashboard tracking pick-and-place success/failure and error reasons, with 3D object visualization and log filtering.</li>
+									</ul>
+									<br>
+
+									<h3>Machine Learning & Edge AI Engineer</h3>
+									<p><strong>Yamaha Robotics Holdings Co., Ltd. | Tokyo, Japan | 04/2020 - 01/2022</strong></p>
+									<ul>
+										<li>Owned the full, end-to-end development of an automated industrial inspection system to detect microscopic particles, achieving 90-95% detection accuracy in early testing.</li>
+										<li>Single-handedly managed the entire project lifecycle, from annotating the initial dataset and processing images to building and optimizing the final deep learning model for deployment on custom low-power hardware.</li>
+									</ul>
+									<br>
+
+									<h3>AI Engineer</h3>
+									<p><strong>Hiperdyne Corporation | Tokyo, Japan | 12/2018 - 03/2020</strong></p>
+									<ul>
+										<li>Built and deployed a deep learning fraud detection model, cutting false positives 56% and boosting precision 44%.</li>
+										<li>Forecast Tokyo traffic conditions by location and time using a deep learning model over engineered time-series features.</li>
+									</ul>
 								</div>
 							</section>
 
 						<!-- Research -->
-							<section id="research" class="main special">
+							<section id="research" class="main">
 								<header class="major">
 									<h2>Academic Research</h2>
 								</header>
-								<div class="features">
-									<article>
-										<h3>Graduate Research Assistant</h3>
-										<p><strong>University of Missouri | 08/2024 - Present</strong></p>
-										<ul style="text-align: left;">
-											<li>Architected a multi-agent orchestration framework coordinating four specialist agents over a DAG, with adaptive context-passing in between agents, profile-on-task reasoning, and Reflexion-based self-healing.</li>
-											<li>Architected a multi-agent AI tutor with FastAPI orchestrating 6 role-specialized LLM agents over a hybrid Neo4j knowledge-graph and vector RAG pipeline.</li>
-											<li>Architected an Agentic AI training platform using FastAPI and JavaScript, integrating a Reinforcement Learning agent that achieved a 100% objective completion rate.</li>
-											<li>Architected ARES-Vidura, a hybrid Entity-Relation + vector RAG agent with multi-hop reasoning, resolving complex multi-step scientific queries at ~86% accuracy at 6.6x lower latency than a proprietary Gemini baseline.</li>
-										</ul>
-									</article>
-								</div>
-								<footer class="major">
+								<div class="content">
+									<h3>Graduate Research Assistant</h3>
+									<p><strong>University of Missouri | 08/2024 - Present</strong></p>
+									<ul>
+										<li>Architected a multi-agent orchestration framework coordinating four specialist agents over a DAG, with adaptive context-passing in between agents, profile-on-task reasoning, and Reflexion-based self-healing.</li>
+										<li>Architected a multi-agent AI tutor with FastAPI orchestrating 6 role-specialized LLM agents over a hybrid Neo4j knowledge-graph and vector RAG pipeline.</li>
+										<li>Architected an Agentic AI training platform using FastAPI and JavaScript, integrating a Reinforcement Learning agent that achieved a 100% objective completion rate.</li>
+										<li>Architected ARES-Vidura, a hybrid Entity-Relation + vector RAG agent with multi-hop reasoning, resolving complex multi-step scientific queries at ~86% accuracy at 6.6x lower latency than a proprietary Gemini baseline.</li>
+									</ul>
+									
+									<hr />
+									
 									<h3>Selected Publications</h3>
-									<ul style="text-align: left;">
+									<ul>
 										<li>Closed-Loop CNT Growth Using Retrieval Augmented Generation and Human Feedback.</li>
 										<li>Federated Learning for Smart Manufacturing: Evaluating Deep Learning Architectures for Time Series Forecasting in a Collaborative Framework.</li>
 										<li>SAGE: Student-focused Adaptive Guidance Engine for Intelligent Tutoring with Regulated Learning.</li>
 									</ul>
-								</footer>
+								</div>
 							</section>
 
 						<!-- Skills -->
@@ -115,7 +135,7 @@
 								<header class="major">
 									<h2>Technical Skills</h2>
 								</header>
-								<ul style="text-align: left;">
+								<ul>
 									<li><strong>GenAI & Agents:</strong> Multi-Agent Systems, RAG, LLM Evaluation, DSPy, Prompt Optimization.</li>
 									<li><strong>LLMOps/MLOps:</strong> MLflow, DVC, Docker, vLLM.</li>
 									<li><strong>Cloud & Data Systems:</strong> AWS (EC2, S3), Kafka, Spark.</li>
@@ -136,6 +156,57 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			
+			<!-- Knowledge Graph Script -->
+			<script type="text/javascript">
+				// Define the nodes of the graph
+				var nodes = new vis.DataSet([
+					{ id: 1, label: 'Mahady\nRayhan', shape: 'circle', color: { background: '#27AE60', border: '#1f8c4d' }, font: { color: 'white', size: 18, face: 'arial' }, size: 30 },
+					{ id: 2, label: 'Agentic AI', title: 'Multi-Agent Orchestration, DSPy, Reflexion' },
+					{ id: 3, label: 'LLMs', title: 'Large Language Models, GPT, Llama' },
+					{ id: 4, label: 'Computer\nVision', title: 'Object Detection, 3D Reconstruction, mAP' },
+					{ id: 5, label: 'Knowledge\nGraphs', title: 'Neo4j, Cypher, Entity-Relation' },
+					{ id: 6, label: 'RAG', title: 'Retrieval-Augmented Generation' },
+					{ id: 7, label: 'Reinforcement\nLearning', title: 'PPO, Q-learning' }
+				]);
 
+				// Define how nodes are connected
+				var edges = new vis.DataSet([
+					{ from: 1, to: 2 },
+					{ from: 1, to: 3 },
+					{ from: 1, to: 4 },
+					{ from: 1, to: 5 },
+					{ from: 1, to: 6 },
+					{ from: 1, to: 7 },
+					{ from: 2, to: 3, dashes: true }, // Agents use LLMs
+					{ from: 5, to: 6, dashes: true }, // Knowledge Graphs power RAG
+					{ from: 3, to: 6, dashes: true }, // LLMs power RAG
+					{ from: 2, to: 6, dashes: true }  // Agents utilize RAG
+				]);
+
+				// Render the graph
+				var container = document.getElementById('mynetwork');
+				var data = { nodes: nodes, edges: edges };
+				var options = {
+					nodes: {
+						shape: 'dot',
+						size: 20,
+						font: { size: 14, color: '#333333', face: 'arial' },
+						borderWidth: 2,
+						color: { background: '#f2f2f2', border: '#aaaaaa' }
+					},
+					edges: {
+						width: 2,
+						color: { color: '#cccccc', highlight: '#27AE60' },
+						smooth: { type: 'continuous' }
+					},
+					physics: {
+						barnesHut: { gravitationalConstant: -3000, centralGravity: 0.3, springLength: 150 },
+						stabilization: { iterations: 150 }
+					},
+					interaction: { hover: true, tooltipDelay: 200 }
+				};
+				var network = new vis.Network(container, data, options);
+			</script>
 	</body>
 </html>
