@@ -1,212 +1,506 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Mahady Hasan Rayhan - Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		
-		<!-- Library for the Interactive Knowledge Graph -->
-		<script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
-		<style>
-			#mynetwork {
-				width: 100%;
-				height: 500px;
-				border-radius: 8px;
-				background-color: #ffffff;
-				border: 1px solid #e5e5e5;
-				margin-bottom: 2em;
-			}
-		</style>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mahady Hasan Rayhan — Agentic AI &amp; Machine Learning</title>
+<meta name="description" content="Mahady Hasan Rayhan builds agentic AI systems that plan, delegate, verify and repair themselves — for tutoring, scientific research, and semiconductor device modeling." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0C1821;
+  --ink-2:#13293D;
+  --paper:#F1F3F2;
+  --paper-2:#E5E9E8;
+  --amber:#E9A13B;
+  --teal:#2E8B84;
+  --slate:#55636B;
+  --line:rgba(12,24,33,.14);
+  --line-dark:rgba(241,243,242,.16);
+  --display:"Instrument Serif",Georgia,serif;
+  --body:"IBM Plex Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:17px;line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{width:min(1080px,92vw);margin:0 auto}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+/* ---------- eyebrow / mono utility ---------- */
+.eyebrow{
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--teal);margin:0 0 1.1rem;
+}
+.eyebrow-dark{color:var(--amber)}
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<span class="logo"><img src="images/logo.svg" alt="" /></span>
-						<h1>Mahady Hasan Rayhan</h1>
-						<p>Ph.D. Candidate in Computer Science | AI Vision & Machine Learning Engineer</p>
-					</header>
+/* ---------- hero ---------- */
+.hero{
+  background:var(--ink);color:var(--paper);position:relative;overflow:hidden;
+  padding:clamp(3.5rem,9vw,6rem) 0 clamp(2rem,5vw,3.2rem);
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    repeating-linear-gradient(to right,rgba(241,243,242,.05) 0 1px,transparent 1px 44px),
+    repeating-linear-gradient(to bottom,rgba(241,243,242,.05) 0 1px,transparent 1px 44px);
+  mask-image:radial-gradient(120% 90% at 50% 30%,#000 30%,transparent 100%);
+}
+.hero::after{
+  content:"";position:absolute;left:50%;top:-30%;width:80vw;height:70vh;
+  transform:translateX(-50%);pointer-events:none;
+  background:radial-gradient(50% 50% at 50% 50%,rgba(46,139,132,.20),transparent 70%);
+}
+.hero .wrap{position:relative;z-index:2}
+.hero h1{
+  font-family:var(--display);font-weight:400;
+  font-size:clamp(2.8rem,8.4vw,5.6rem);line-height:.98;
+  margin:0 0 1.1rem;letter-spacing:-.01em;
+}
+.hero h1 em{font-style:italic;color:var(--amber)}
+.thesis{
+  font-size:clamp(1.02rem,2vw,1.24rem);max-width:44ch;color:rgba(241,243,242,.82);
+  margin:0 0 1.6rem;
+}
+.hero-meta{
+  font-family:var(--mono);font-size:.76rem;letter-spacing:.06em;
+  color:rgba(241,243,242,.6);margin:0 0 2.2rem;
+}
+.links{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 clamp(2.4rem,6vw,3.6rem);padding:0;list-style:none}
+.links a{
+  display:inline-block;text-decoration:none;font-family:var(--mono);font-size:.78rem;
+  letter-spacing:.06em;padding:.5rem .9rem;border:1px solid var(--line-dark);
+  border-radius:2px;color:rgba(241,243,242,.9);transition:background .18s,border-color .18s,color .18s;
+}
+.links a:hover{background:var(--amber);border-color:var(--amber);color:var(--ink)}
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul>
-							<li><a href="#graph-section" class="active">AI Knowledge Graph</a></li>
-							<li><a href="#intro">Overview</a></li>
-							<li><a href="#experience">Industry Experience</a></li>
-							<li><a href="#research">Research</a></li>
-							<li><a href="#skills">Tech Stack</a></li>
-						</ul>
-					</nav>
+/* ---------- signature: the pipeline ---------- */
+.pipeline{border-top:1px solid var(--line-dark);padding-top:1.6rem}
+.pipeline-cap{
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(241,243,242,.5);margin:0 0 .9rem;
+}
+.pipeline svg{width:100%;height:auto;display:block;overflow:visible}
+.node rect{
+  fill:rgba(241,243,242,.04);stroke:var(--line-dark);stroke-width:1;
+  transition:fill .2s,stroke .2s;
+}
+.node text{
+  font-family:var(--mono);font-size:11px;letter-spacing:.09em;
+  fill:rgba(241,243,242,.86);text-anchor:middle;dominant-baseline:middle;
+}
+.node:hover rect,.node:focus rect{fill:rgba(233,161,59,.16);stroke:var(--amber)}
+.node:hover text,.node:focus text{fill:#fff}
+.node{cursor:default}
+.edge{fill:none;stroke:rgba(46,139,132,.55);stroke-width:1.25}
+.edge-flow{
+  fill:none;stroke:var(--teal);stroke-width:1.6;
+  stroke-dasharray:5 90;stroke-linecap:round;
+  animation:flow 5s linear infinite;
+}
+.edge-back{stroke:rgba(233,161,59,.5);stroke-dasharray:4 5}
+.edge-label{
+  font-family:var(--mono);font-size:10px;letter-spacing:.12em;
+  fill:var(--amber);text-anchor:middle;
+}
+.node-hint{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;
+  fill:rgba(241,243,242,.42);text-anchor:middle;
+}
+@keyframes flow{to{stroke-dashoffset:-95}}
+@media (prefers-reduced-motion:reduce){.edge-flow{animation:none;stroke-dasharray:none;stroke:rgba(46,139,132,.55)}}
 
-				<!-- Main -->
-					<div id="main">
+/* ---------- nav ---------- */
+nav{
+  position:sticky;top:0;z-index:20;background:rgba(241,243,242,.93);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
+}
+nav ul{display:flex;gap:1.6rem;margin:0;padding:.85rem 0;list-style:none;overflow-x:auto}
+nav a{
+  font-family:var(--mono);font-size:.74rem;letter-spacing:.13em;text-transform:uppercase;
+  text-decoration:none;color:var(--slate);white-space:nowrap;padding-bottom:2px;
+  border-bottom:1px solid transparent;transition:color .18s,border-color .18s;
+}
+nav a:hover{color:var(--ink);border-bottom-color:var(--amber)}
 
-						<!-- Interactive Knowledge Graph Section -->
-							<section id="graph-section" class="main special">
-								<header class="major">
-									<h2>My Research Universe</h2>
-									<p>Drag the nodes to interact with the core areas of my work.</p>
-								</header>
-								<div id="mynetwork"></div>
-							</section>
+/* ---------- sections ---------- */
+section{padding:clamp(3.2rem,7vw,5.2rem) 0;border-bottom:1px solid var(--line)}
+section h2{
+  font-family:var(--display);font-weight:400;font-size:clamp(1.9rem,4.4vw,2.9rem);
+  line-height:1.06;margin:0 0 .7rem;letter-spacing:-.01em;
+}
+.lede{max-width:60ch;color:var(--slate);margin:0 0 2.6rem}
 
-						<!-- Introduction -->
-							<section id="intro" class="main">
-								<div class="spotlight">
-									<div class="content">
-										<header class="major">
-											<h2>About Me</h2>
-										</header>
-										<p>I am a Ph.D. Candidate in Computer Science at the University of Missouri-Columbia, holding a Bachelor's degree in Computer Science. I am deeply passionate about the convergence of AI, Machine Learning, and their real-world applications. With over five years of professional engineering experience, my research and work focus on Knowledge Graphs, Generative AI, and Agent-based Systems to solve complex industrial challenges.</p>
-										<ul class="actions">
-											<li><a href="mailto:mhr6wb@missouri.edu" class="button">mhr6wb@missouri.edu</a></li>
-										</ul>
-									</div>
-									<span class="image"><img src="https://github-readme-stats-sigma-five.vercel.app/api?username=mahadyRayhan&show_icons=true&theme=radical&count_private=true&bg_color=181818&title_color=27AE60&text_color=FFFFFF&icon_color=27AE60&border_color=44475A" alt="GitHub Stats" /></span>
-								</div>
-							</section>
+/* research threads */
+.threads{display:grid;gap:0}
+.thread{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.55fr);gap:clamp(1rem,4vw,3rem);
+  padding:2rem 0;border-top:1px solid var(--line);
+}
+.thread:last-child{border-bottom:1px solid var(--line)}
+.thread h3{
+  font-family:var(--body);font-weight:600;font-size:1.06rem;margin:.1rem 0 .5rem;
+  letter-spacing:-.005em;
+}
+.thread p{margin:0 0 1rem;color:var(--slate);font-size:.97rem}
+.thread-tag{
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--teal);margin:.1rem 0 0;
+}
+.facts{list-style:none;margin:0;padding:0;display:grid;gap:.35rem}
+.facts li{
+  font-family:var(--mono);font-size:.79rem;color:var(--ink);
+  padding-left:1.1rem;position:relative;line-height:1.5;
+}
+.facts li::before{
+  content:"";position:absolute;left:0;top:.62em;width:6px;height:1px;background:var(--amber);
+}
 
-						<!-- Industry Experience -->
-							<section id="experience" class="main">
-								<header class="major">
-									<h2>Industry Experience</h2>
-								</header>
-								<div class="content">
-									<h3>AI Vision Engineer (R&D Industrial Automation)</h3>
-									<p><strong>ROMS Co., Ltd. | Tokyo, Japan | 01/2022 - 12/2023</strong></p>
-									<ul>
-										<li>Engineered the core AI vision models for an industrial robotic piece-picking system, driving the picking success rate from 0% to 96% over two years (custom deep learning model at 95.8% mAP).</li>
-										<li>Cut system cycle time by 70% by optimizing model inference, grasping-point logic, and 3D reconstruction.</li>
-										<li>Developed and deployed an adaptive agent for automated image annotation, verification, and upload.</li>
-										<li>Built a real-time dashboard tracking pick-and-place success/failure and error reasons, with 3D object visualization and log filtering.</li>
-									</ul>
-									<br>
+/* publications */
+.pubs{list-style:none;margin:0;padding:0}
+.pub{
+  display:grid;grid-template-columns:150px minmax(0,1fr);gap:clamp(1rem,3vw,2.4rem);
+  padding:1.4rem 0;border-top:1px solid var(--line);
+}
+.pub:last-child{border-bottom:1px solid var(--line)}
+.pub-venue{font-family:var(--mono);font-size:.76rem;line-height:1.55;color:var(--slate)}
+.pub-venue b{display:block;color:var(--ink);font-weight:500}
+.pub-title{font-size:1rem;font-weight:500;margin:0 0 .3rem;line-height:1.4}
+.pub-title a{text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .18s}
+.pub-title a:hover{border-bottom-color:var(--amber)}
+.pub-authors{font-size:.87rem;color:var(--slate);margin:0}
+.pub-authors b{font-weight:600;color:var(--ink)}
 
-									<h3>Machine Learning & Edge AI Engineer</h3>
-									<p><strong>Yamaha Robotics Holdings Co., Ltd. | Tokyo, Japan | 04/2020 - 01/2022</strong></p>
-									<ul>
-										<li>Owned the full, end-to-end development of an automated industrial inspection system to detect microscopic particles, achieving 90-95% detection accuracy in early testing.</li>
-										<li>Single-handedly managed the entire project lifecycle, from annotating the initial dataset and processing images to building and optimizing the final deep learning model for deployment on custom low-power hardware.</li>
-									</ul>
-									<br>
+/* experience */
+.role{
+  display:grid;grid-template-columns:150px minmax(0,1fr);gap:clamp(1rem,3vw,2.4rem);
+  padding:1.9rem 0;border-top:1px solid var(--line);
+}
+.role:last-of-type{border-bottom:1px solid var(--line)}
+.role-when{font-family:var(--mono);font-size:.76rem;color:var(--slate);line-height:1.55}
+.role-when b{display:block;color:var(--ink);font-weight:500}
+.role h3{font-family:var(--body);font-weight:600;font-size:1.04rem;margin:0 0 .1rem}
+.role .org{font-size:.9rem;color:var(--slate);margin:0 0 .9rem}
+.role ul{margin:0;padding:0;list-style:none;display:grid;gap:.55rem}
+.role li{font-size:.95rem;color:var(--slate);padding-left:1.1rem;position:relative}
+.role li::before{content:"";position:absolute;left:0;top:.72em;width:6px;height:1px;background:var(--teal)}
+.role li b{color:var(--ink);font-weight:600}
 
-									<h3>AI Engineer</h3>
-									<p><strong>Hiperdyne Corporation | Tokyo, Japan | 12/2018 - 03/2020</strong></p>
-									<ul>
-										<li>Built and deployed a deep learning fraud detection model, cutting false positives 56% and boosting precision 44%.</li>
-										<li>Forecast Tokyo traffic conditions by location and time using a deep learning model over engineered time-series features.</li>
-									</ul>
-								</div>
-							</section>
+/* stack */
+.stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.6rem 2.4rem}
+.stack h3{
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--teal);margin:0 0 .5rem;font-weight:500;
+}
+.stack p{margin:0;font-size:.93rem;color:var(--slate)}
 
-						<!-- Research -->
-							<section id="research" class="main">
-								<header class="major">
-									<h2>Academic Research</h2>
-								</header>
-								<div class="content">
-									<h3>Graduate Research Assistant</h3>
-									<p><strong>University of Missouri | 08/2024 - Present</strong></p>
-									<ul>
-										<li>Architected a multi-agent orchestration framework coordinating four specialist agents over a DAG, with adaptive context-passing in between agents, profile-on-task reasoning, and Reflexion-based self-healing.</li>
-										<li>Architected a multi-agent AI tutor with FastAPI orchestrating 6 role-specialized LLM agents over a hybrid Neo4j knowledge-graph and vector RAG pipeline.</li>
-										<li>Architected an Agentic AI training platform using FastAPI and JavaScript, integrating a Reinforcement Learning agent that achieved a 100% objective completion rate.</li>
-										<li>Architected ARES-Vidura, a hybrid Entity-Relation + vector RAG agent with multi-hop reasoning, resolving complex multi-step scientific queries at ~86% accuracy at 6.6x lower latency than a proprietary Gemini baseline.</li>
-									</ul>
-									
-									<hr />
-									
-									<h3>Selected Publications</h3>
-									<ul>
-										<li>Closed-Loop CNT Growth Using Retrieval Augmented Generation and Human Feedback.</li>
-										<li>Federated Learning for Smart Manufacturing: Evaluating Deep Learning Architectures for Time Series Forecasting in a Collaborative Framework.</li>
-										<li>SAGE: Student-focused Adaptive Guidance Engine for Intelligent Tutoring with Regulated Learning.</li>
-									</ul>
-								</div>
-							</section>
+/* contact */
+.contact{background:var(--ink);color:var(--paper);border-bottom:none}
+.contact h2{color:var(--paper)}
+.contact .lede{color:rgba(241,243,242,.72)}
+.contact .links{margin-bottom:2.6rem}
+.colophon{
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:rgba(241,243,242,.42);
+  border-top:1px solid var(--line-dark);padding-top:1.3rem;margin:0;
+}
 
-						<!-- Skills -->
-							<section id="skills" class="main">
-								<header class="major">
-									<h2>Technical Skills</h2>
-								</header>
-								<ul>
-									<li><strong>GenAI & Agents:</strong> Multi-Agent Systems, RAG, LLM Evaluation, DSPy, Prompt Optimization.</li>
-									<li><strong>LLMOps/MLOps:</strong> MLflow, DVC, Docker, vLLM.</li>
-									<li><strong>Cloud & Data Systems:</strong> AWS (EC2, S3), Kafka, Spark.</li>
-									<li><strong>ML/Deep Learning:</strong> scikit-learn, PyTorch, TensorFlow.</li>
-									<li><strong>Fine-Tuning & RL:</strong> PEFT/LORA, PPO, Q-learning.</li>
-									<li><strong>Languages & DBs:</strong> Python, Java, C++ SQL, Neo4j, Vector DB.</li>
-								</ul>
-							</section>
+@media (max-width:760px){
+  .thread,.pub,.role{grid-template-columns:1fr;gap:.9rem}
+  .pub-venue,.role-when{order:-1}
+  nav ul{gap:1.2rem}
+}
+</style>
+</head>
+<body>
 
-					</div>
-			</div>
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow eyebrow-dark">M.S. Computer Science &middot; University of Missouri</p>
+    <h1>Mahady Hasan<br>Rayhan<em>.</em></h1>
+    <p class="thesis">I build AI systems that plan their own work, hand pieces of it to specialists, check the results, and fix themselves when the check fails.</p>
+    <p class="hero-meta">Columbia, Missouri &middot; previously Tokyo — 5 yrs shipping vision &amp; edge ML in production</p>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			
-			<!-- Knowledge Graph Script -->
-			<script type="text/javascript">
-				// Define the nodes of the graph
-				var nodes = new vis.DataSet([
-					{ id: 1, label: 'Mahady\nRayhan', shape: 'circle', color: { background: '#27AE60', border: '#1f8c4d' }, font: { color: 'white', size: 18, face: 'arial' }, size: 30 },
-					{ id: 2, label: 'Agentic AI', title: 'Multi-Agent Orchestration, DSPy, Reflexion' },
-					{ id: 3, label: 'LLMs', title: 'Large Language Models, GPT, Llama' },
-					{ id: 4, label: 'Computer\nVision', title: 'Object Detection, 3D Reconstruction, mAP' },
-					{ id: 5, label: 'Knowledge\nGraphs', title: 'Neo4j, Cypher, Entity-Relation' },
-					{ id: 6, label: 'RAG', title: 'Retrieval-Augmented Generation' },
-					{ id: 7, label: 'Reinforcement\nLearning', title: 'PPO, Q-learning' }
-				]);
+    <ul class="links">
+      <li><a href="mailto:mhr6wb@missouri.edu">Email</a></li>
+      <li><a href="https://scholar.google.com/citations?user=uBkjbx8AAAAJ&hl=en">Google Scholar</a></li>
+      <li><a href="https://github.com/mahadyRayhan">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/mahady-hasan-rayhan/">LinkedIn</a></li>
+      <li><a href="Mahady_Hasan_Rayhan_CV.pdf">CV (PDF)</a></li>
+    </ul>
 
-				// Define how nodes are connected
-				var edges = new vis.DataSet([
-					{ from: 1, to: 2 },
-					{ from: 1, to: 3 },
-					{ from: 1, to: 4 },
-					{ from: 1, to: 5 },
-					{ from: 1, to: 6 },
-					{ from: 1, to: 7 },
-					{ from: 2, to: 3, dashes: true }, // Agents use LLMs
-					{ from: 5, to: 6, dashes: true }, // Knowledge Graphs power RAG
-					{ from: 3, to: 6, dashes: true }, // LLMs power RAG
-					{ from: 2, to: 6, dashes: true }  // Agents utilize RAG
-				]);
+    <div class="pipeline">
+      <p class="pipeline-cap">The pattern underneath most of my work</p>
+      <svg viewBox="0 0 900 278" role="img" aria-label="Diagram of an agentic pipeline: a task is profiled, decomposed into a plan, routed to retrieval, reasoning and simulation specialists, then verified. Failed verification loops back to re-planning.">
+        <defs>
+          <marker id="ah" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L8,4 L0,8 z" fill="rgba(46,139,132,.75)"/>
+          </marker>
+          <marker id="ah-amber" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L8,4 L0,8 z" fill="rgba(233,161,59,.7)"/>
+          </marker>
+        </defs>
 
-				// Render the graph
-				var container = document.getElementById('mynetwork');
-				var data = { nodes: nodes, edges: edges };
-				var options = {
-					nodes: {
-						shape: 'dot',
-						size: 20,
-						font: { size: 14, color: '#333333', face: 'arial' },
-						borderWidth: 2,
-						color: { background: '#f2f2f2', border: '#aaaaaa' }
-					},
-					edges: {
-						width: 2,
-						color: { color: '#cccccc', highlight: '#27AE60' },
-						smooth: { type: 'continuous' }
-					},
-					physics: {
-						barnesHut: { gravitationalConstant: -3000, centralGravity: 0.3, springLength: 150 },
-						stabilization: { iterations: 150 }
-					},
-					interaction: { hover: true, tooltipDelay: 200 }
-				};
-				var network = new vis.Network(container, data, options);
-			</script>
-	</body>
+        <!-- edges -->
+        <g>
+          <path class="edge" d="M96,162 H140" marker-end="url(#ah)"/>
+          <path class="edge" d="M232,162 H272" marker-end="url(#ah)"/>
+          <path class="edge" d="M368,162 C400,162 400,96 424,96" marker-end="url(#ah)"/>
+          <path class="edge" d="M368,162 H424" marker-end="url(#ah)"/>
+          <path class="edge" d="M368,162 C400,162 400,228 424,228" marker-end="url(#ah)"/>
+          <path class="edge" d="M536,96 C566,96 570,162 596,162" marker-end="url(#ah)"/>
+          <path class="edge" d="M536,162 H596" marker-end="url(#ah)"/>
+          <path class="edge" d="M536,228 C566,228 570,162 596,162" marker-end="url(#ah)"/>
+          <path class="edge" d="M704,162 H744" marker-end="url(#ah)"/>
+          <path class="edge edge-back" d="M650,146 C642,44 378,44 320,146" marker-end="url(#ah-amber)"/>
+        </g>
+        <g>
+          <path class="edge-flow" d="M96,162 H140"/>
+          <path class="edge-flow" d="M232,162 H272"/>
+          <path class="edge-flow" d="M368,162 C400,162 400,96 424,96"/>
+          <path class="edge-flow" d="M368,162 H424"/>
+          <path class="edge-flow" d="M368,162 C400,162 400,228 424,228"/>
+          <path class="edge-flow" d="M536,96 C566,96 570,162 596,162"/>
+          <path class="edge-flow" d="M536,162 H596"/>
+          <path class="edge-flow" d="M536,228 C566,228 570,162 596,162"/>
+          <path class="edge-flow" d="M704,162 H744"/>
+        </g>
+
+        <rect x="440" y="54" width="92" height="16" fill="#0C1821"/>
+        <text class="edge-label" x="486" y="66">RE-PLAN ON FAIL</text>
+
+        <!-- nodes -->
+        <g class="node" tabindex="0"><rect x="20" y="146" width="76" height="32" rx="2"/><text x="58" y="163">TASK</text></g>
+        <g class="node" tabindex="0"><rect x="140" y="146" width="92" height="32" rx="2"/><text x="186" y="163">PROFILE</text><text class="node-hint" x="186" y="196">who is asking</text></g>
+        <g class="node" tabindex="0"><rect x="272" y="146" width="96" height="32" rx="2"/><text x="320" y="163">DECOMPOSE</text><text class="node-hint" x="320" y="196">task &#8594; DAG</text></g>
+        <g class="node" tabindex="0"><rect x="424" y="80" width="112" height="32" rx="2"/><text x="480" y="97">RETRIEVE</text></g>
+        <g class="node" tabindex="0"><rect x="424" y="146" width="112" height="32" rx="2"/><text x="480" y="163">REASON</text></g>
+        <g class="node" tabindex="0"><rect x="424" y="212" width="112" height="32" rx="2"/><text x="480" y="229">SIMULATE</text><text class="node-hint" x="480" y="262">surrogate models</text></g>
+        <g class="node" tabindex="0"><rect x="596" y="146" width="108" height="32" rx="2"/><text x="650" y="163">VERIFY</text><text class="node-hint" x="650" y="196">judge + guardrails</text></g>
+        <g class="node" tabindex="0"><rect x="744" y="146" width="96" height="32" rx="2"/><text x="792" y="163">ANSWER</text></g>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap">
+    <ul>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#industry">Industry</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+<section id="research">
+  <div class="wrap">
+    <p class="eyebrow">Research</p>
+    <h2>Four places I've pointed the same idea</h2>
+    <p class="lede">Every project below is a version of one question: what has to be true for a system of language models to be trusted with real work? Different domains stress different answers — pedagogy, scientific reasoning, device physics, safety.</p>
+
+    <div class="threads">
+
+      <article class="thread">
+        <div>
+          <h3>Multi-agent orchestration for scientific research</h3>
+          <p class="thread-tag">SciWeaver</p>
+        </div>
+        <div>
+          <p>Four specialist agents coordinated over a DAG, with context passed adaptively between them, reasoning conditioned on a user profile, and Reflexion-style self-healing when a step fails. Scored by an LLM-as-a-judge framework across five dimensions.</p>
+          <ul class="facts">
+            <li>+17.2% weighted score over GPT-5 and Gemini baselines</li>
+            <li>Validated with paired Wilcoxon tests and bootstrap CIs</li>
+            <li>Failure-mode engine catalogues where the pipeline breaks</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="thread">
+        <div>
+          <h3>An AI tutor that models what the student actually knows</h3>
+          <p class="thread-tag">SAGE</p>
+        </div>
+        <div>
+          <p>Six role-specialized agents over a hybrid Neo4j knowledge graph and vector retrieval pipeline, sequencing prerequisites toward a goal the learner sets. Mastery is tracked with Bayesian Knowledge Tracing and scheduled with spaced repetition; a deterministic gatekeeper enforces pedagogical guardrails before anything reaches the student.</p>
+          <ul class="facts">
+            <li>Three-part memory: working, episodic, priority-scheduled review</li>
+            <li>CPU-local models for real-time intent classification</li>
+            <li>Published at IEEE ICHMS 2026</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="thread">
+        <div>
+          <h3>Reading device structure out of electrical measurements</h3>
+          <p class="thread-tag">Semiconductors &amp; materials</p>
+        </div>
+        <div>
+          <p>An inverse-modeling framework for &beta;-Ga<sub>2</sub>O<sub>3</sub> MOSFETs that recovers internal geometry from I&ndash;V curves — the measurement is cheap, the physical characterization is not. A best-per-target ensemble picks the right estimator per dimension, and an agreement gate abstains when the models disagree.</p>
+          <ul class="facts">
+            <li>R&sup2; = 0.990, 2.68% MAPE on held-out devices</li>
+            <li>1-D CNN, gradient boosting, and a contrastive gate-position module</li>
+            <li>Related: closed-loop CNT growth guided by retrieval and human feedback</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="thread">
+        <div>
+          <h3>Agents that teach through a live environment</h3>
+          <p class="thread-tag">Cybersecurity training</p>
+        </div>
+        <div>
+          <p>A training platform where a reinforcement learning agent works alongside the learner inside the exercise, paired with a retrieval-grounded assistant that answers in under 1.4 seconds so guidance arrives while the task is still in the learner's head.</p>
+          <ul class="facts">
+            <li>PPO agent, 100% objective completion rate</li>
+            <li>Perfect retrieval and safety scores on the assistant benchmark</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap">
+    <p class="eyebrow">Publications</p>
+    <h2>Peer-reviewed work</h2>
+    <p class="lede">Full list and citation counts on <a href="https://scholar.google.com/citations?user=uBkjbx8AAAAJ&hl=en">Google Scholar</a>.</p>
+
+    <ul class="pubs">
+      <li class="pub">
+        <div class="pub-venue"><b>IEEE ICHMS</b>2026</div>
+        <div>
+          <p class="pub-title">SAGE: Student-focused Adaptive Guidance Engine for Intelligent Tutoring with Regulated Learning</p>
+          <p class="pub-authors"><b>M. H. Rayhan</b> et al.</p>
+        </div>
+      </li>
+      <li class="pub">
+        <div class="pub-venue"><b>IEEE ICHMS</b>2025 &middot; pp. 128&ndash;133</div>
+        <div>
+          <p class="pub-title"><a href="https://ieeexplore.ieee.org/document/11154195/">Closed-Loop CNT Growth Using Retrieval Augmented Generation and Human Feedback</a></p>
+          <p class="pub-authors">U. Roy, V. Seth, <b>M. H. Rayhan</b>, A. Pandey, M. Lemus Alarcon, M. R. Maschmann, P. Calyam</p>
+        </div>
+      </li>
+      <li class="pub">
+        <div class="pub-venue"><b>Springer / IFIP</b>Book chapter</div>
+        <div>
+          <p class="pub-title">Federated Learning for Smart Manufacturing: Evaluating Deep Learning Architectures for Time Series Forecasting in a Collaborative Framework</p>
+          <p class="pub-authors"><b>M. H. Rayhan</b> et al.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="industry">
+  <div class="wrap">
+    <p class="eyebrow">Industry</p>
+    <h2>Five years of models that had to work on Monday</h2>
+    <p class="lede">Before the research, production computer vision and edge ML in Tokyo — where a model that fails is a robot arm that stops and a line that backs up.</p>
+
+    <article class="role">
+      <div class="role-when"><b>2022&ndash;2023</b>ROMS Co., Ltd.<br>Tokyo</div>
+      <div>
+        <h3>AI Vision Engineer, R&amp;D Industrial Automation</h3>
+        <p class="org">Robotic piece-picking for warehouse fulfilment</p>
+        <ul>
+          <li>Took the picking success rate from <b>0% to 96%</b> over two years; the detection model reached <b>95.8% mAP</b> on in-house data.</li>
+          <li>Cut cycle time <b>70%, from 20s to 6s</b>, by reworking inference, grasp-point selection, and 3D reconstruction together rather than separately.</li>
+          <li>Built an annotation agent that labelled, verified, and uploaded new images daily, so the training set grew without anyone babysitting it.</li>
+          <li>Shipped a root-cause dashboard with 3D object playback, turning "the arm missed" into a specific, filterable failure reason.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="role">
+      <div class="role-when"><b>2020&ndash;2022</b>Yamaha Robotics<br>Tokyo</div>
+      <div>
+        <h3>Machine Learning &amp; Edge AI Engineer</h3>
+        <p class="org">Automated industrial inspection</p>
+        <ul>
+          <li>Owned an inspection system detecting <b>1&micro;m particles</b> end to end, reaching <b>90&ndash;95% accuracy</b> in early testing.</li>
+          <li>Ran the whole lifecycle solo — annotation, image processing, model design, and optimization for custom low-power hardware.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="role">
+      <div class="role-when"><b>2018&ndash;2020</b>Hiperdyne Corp.<br>Tokyo</div>
+      <div>
+        <h3>AI Engineer</h3>
+        <p class="org">Fraud detection and traffic forecasting</p>
+        <ul>
+          <li>Deployed a VAE-based fraud detector that cut false positives <b>56%</b> and raised precision <b>44%</b>.</li>
+          <li>Error analysis showed most remaining misclassifications were users genuinely behaving suspiciously — a finding that changed how the threshold was set.</li>
+          <li>Forecast Tokyo traffic by location and time from engineered time-series features.</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="wrap">
+    <p class="eyebrow">Stack</p>
+    <h2>What I reach for</h2>
+    <div class="stack">
+      <div>
+        <h3>Agents &amp; GenAI</h3>
+        <p>Multi-agent orchestration, RAG, DSPy, prompt optimization, LLM-as-a-judge evaluation</p>
+      </div>
+      <div>
+        <h3>Deep learning</h3>
+        <p>PyTorch, TensorFlow, scikit-learn, CNNs, gradient boosting, VAEs</p>
+      </div>
+      <div>
+        <h3>Fine-tuning &amp; RL</h3>
+        <p>PEFT/LoRA, 4-bit quantization, PPO, Q-learning</p>
+      </div>
+      <div>
+        <h3>Data &amp; storage</h3>
+        <p>Neo4j, vector databases, SQL, Kafka, Spark</p>
+      </div>
+      <div>
+        <h3>Ops</h3>
+        <p>MLflow, DVC, Docker, vLLM, AWS (EC2, S3), FastAPI</p>
+      </div>
+      <div>
+        <h3>Languages</h3>
+        <p>Python, Java, C++, C, JavaScript</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <p class="eyebrow eyebrow-dark">Contact</p>
+    <h2>Open to research collaborations<br>and applied AI roles.</h2>
+    <p class="lede">If you're working on agentic systems, scientific ML, or anything where a model's output has to be checked before it's trusted — I'd like to hear about it.</p>
+    <ul class="links">
+      <li><a href="mailto:mhr6wb@missouri.edu">mhr6wb@missouri.edu</a></li>
+      <li><a href="https://scholar.google.com/citations?user=uBkjbx8AAAAJ&hl=en">Google Scholar</a></li>
+      <li><a href="https://github.com/mahadyRayhan">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/mahady-hasan-rayhan/">LinkedIn</a></li>
+    </ul>
+    <p class="colophon">Set in Instrument Serif and IBM Plex &middot; Columbia, Missouri</p>
+  </div>
+</section>
+
+</main>
+</body>
 </html>
