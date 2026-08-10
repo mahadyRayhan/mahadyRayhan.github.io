@@ -171,6 +171,24 @@ section h2{
   content:"";position:absolute;left:0;top:.62em;width:6px;height:1px;background:var(--amber);
 }
 
+/* funding */
+.funding{
+  display:grid;grid-template-columns:150px minmax(0,1fr);gap:clamp(1rem,3vw,2.4rem);
+  margin-top:2.4rem;padding:1.5rem 0 0;border-top:1px solid var(--line);
+}
+.funding-tag{
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--teal);margin:.15rem 0 0;
+}
+.funding-award{
+  font-family:var(--mono);font-size:.79rem;color:var(--ink);margin:0 0 .35rem;
+}
+.funding-award b{color:var(--amber);font-weight:500}
+.funding-award a{text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .18s}
+.funding-award a:hover{border-bottom-color:var(--amber)}
+.funding-title{font-size:.97rem;margin:0 0 .35rem;line-height:1.45}
+.funding-pis{font-size:.85rem;color:var(--slate);margin:0}
+
 /* publications */
 .pubs{list-style:none;margin:0;padding:0}
 .pub{
@@ -351,6 +369,7 @@ section h2{
             <li>Three-part memory: working, episodic, priority-scheduled review</li>
             <li>CPU-local models for real-time intent classification</li>
             <li>Published at IEEE ICHMS 2026</li>
+            <li>Supported in part by NSF Award #2449869</li>
           </ul>
         </div>
       </article>
@@ -385,6 +404,15 @@ section h2{
       </article>
 
     </div>
+
+      <div class="funding">
+        <p class="funding-tag">Funding</p>
+        <div>
+          <p class="funding-award"><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2449869">NSF Award <b>#2449869</b></a> &middot; IUSE/PFE:RED Partnership &middot; 2025&ndash;2030</p>
+          <p class="funding-title">Collaborative Research: Cultivating Neuroadaptive Learning Ecosystems through AI-Powered Personalized Learning</p>
+          <p class="funding-pis">Project participant. PI/co-PIs: Roger Fales, Prasad Calyam, Maria Chrysochoou, Sarah Orton, Noah Glaser &middot; University of Missouri</p>
+        </div>
+      </div>
   </div>
 </section>
 
